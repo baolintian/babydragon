@@ -1,0 +1,51 @@
+{{- if not (isset . "pages") -}}
+  {{- errorf "partial %q requires a pages collection" "post-list.html" -}}
+{{- end -}}
+{{- $pages := .pages -}}
+{{- $currentTerm := .currentTerm | default "" -}}
+{{- $isTermPage := .isTermPage | default false -}}
+{{- if gt (len $pages) 0 -}}
+<ol class="post-list" role="list">
+  {{- range $pages.ByDate.Reverse -}}
+    {{- $terms := .GetTerms "categories" -}}
+    {{- $primaryCategory := "" -}}
+    {{- $primaryCategoryLink := "" -}}
+    {{- with $terms -}}
+      {{- $primaryCategory = (index . 0).LinkTitle -}}
+      {{- $primaryCategoryLink = (index . 0).RelPermalink -}}
+    {{- end -}}
+    {{- if and $isTermPage $currentTerm -}}
+      {{- $primaryCategory = $currentTerm -}}
+      {{- range $terms -}}
+        {{- if eq .LinkTitle $currentTerm -}}
+          {{- $primaryCategoryLink = .RelPermalink -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    <li class="post-list-item">
+      <article class="post-card">
+        <header class="post-card-header">
+          <h2 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+          <p class="post-card-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+            {{- with $primaryCategory -}}
+              <span class="post-card-separator" aria-hidden="true">·</span>
+              {{- if $primaryCategoryLink -}}
+                <a class="post-card-category" href="{{ $primaryCategoryLink }}">{{ . }}</a>
+              {{- else -}}
+                <span class="post-card-category">{{ . }}</span>
+              {{- end -}}
+            {{- end -}}
+          </p>
+        </header>
+        {{- $summary := .Description | default .Summary -}}
+        {{- with $summary -}}
+          <p class="post-card-summary">{{ . | plainify }}</p>
+        {{- end -}}
+      </article>
+    </li>
+  {{- end -}}
+</ol>
+{{- else -}}
+<p class="post-list-empty">暂无文章。</p>
+{{- end -}}

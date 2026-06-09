@@ -1,0 +1,45 @@
+baseURL = "http://localhost/"
+title = "Your Blog"
+locale = "zh-cn"
+defaultContentLanguage = "zh-cn"
+hasCJKLanguage = true
+enableRobotsTXT = true
+disableKinds = ["RSS"]
+
+[outputs]
+home = ["HTML"]
+section = ["HTML"]
+taxonomy = ["HTML"]
+term = ["HTML"]
+page = ["HTML"]
+
+[params]
+author = "Your Name"
+description = "A minimalist blog."
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+[permalinks]
+posts = "/posts/:slugorcontentbasename/"
+
+[[menu.main]]
+name = "首页"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "归档"
+url = "/archive/"
+weight = 2
+
+[[menu.main]]
+name = "分类"
+url = "/categories/"
+weight = 3
+
+[[menu.main]]
+name = "关于"
+url = "/about/"
+weight = 4

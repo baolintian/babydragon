@@ -1,0 +1,10 @@
+<header class="site-header">
+  <div class="site-shell">
+    <a class="site-title" href="{{ "/" | relURL }}">{{ site.Title }}</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      {{- range site.Menus.main }}
+      <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+      {{- end }}
+    </nav>
+  </div>
+</header>
