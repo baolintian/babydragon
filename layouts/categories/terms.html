@@ -1,6 +1,6 @@
 {{ define "main" }}
 <section class="category-terms-page">
-  <h1 class="content-list-title">分类</h1>
+  <h1 class="content-list-title">{{ .Title }}</h1>
   {{ if gt (len .Data.Terms) 0 }}
     <ul class="category-terms-list">
       {{ range .Data.Terms.Alphabetical }}

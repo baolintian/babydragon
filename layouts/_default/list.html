@@ -1,6 +1,8 @@
 {{ define "main" }}
+{{ $pages := where .RegularPages "Section" "posts" }}
+{{ $isTermPage := eq .Kind "term" }}
 <section class="content-list-page">
   <h1 class="content-list-title">{{ .Title }}</h1>
-  {{ partial "post-list.html" (dict "pages" .Pages) }}
+  {{ partial "post-list.html" (dict "pages" $pages "currentTerm" .Title "isTermPage" $isTermPage) }}
 </section>
 {{ end }}

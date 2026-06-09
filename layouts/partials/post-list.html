@@ -2,6 +2,8 @@
   {{- errorf "partial %q requires a pages collection" "post-list.html" -}}
 {{- end -}}
 {{- $pages := .pages -}}
+{{- $currentTerm := .currentTerm | default "" -}}
+{{- $isTermPage := .isTermPage | default false -}}
 {{- if gt (len $pages) 0 -}}
 <ol class="post-list" role="list">
   {{- range $pages.ByDate.Reverse -}}
@@ -11,6 +13,14 @@
     {{- with $terms -}}
       {{- $primaryCategory = (index . 0).LinkTitle -}}
       {{- $primaryCategoryLink = (index . 0).RelPermalink -}}
+    {{- end -}}
+    {{- if and $isTermPage $currentTerm -}}
+      {{- $primaryCategory = $currentTerm -}}
+      {{- range $terms -}}
+        {{- if eq .LinkTitle $currentTerm -}}
+          {{- $primaryCategoryLink = .RelPermalink -}}
+        {{- end -}}
+      {{- end -}}
     {{- end -}}
     <li class="post-list-item">
       <article class="post-card">
