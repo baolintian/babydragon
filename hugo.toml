@@ -4,6 +4,14 @@ locale = "zh-cn"
 defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
 enableRobotsTXT = true
+disableKinds = ["RSS"]
+
+[outputs]
+home = ["HTML"]
+section = ["HTML"]
+taxonomy = ["HTML"]
+term = ["HTML"]
+page = ["HTML"]
 
 [params]
 author = "Your Name"
