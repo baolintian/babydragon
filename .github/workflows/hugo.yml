@@ -36,7 +36,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --gc --minify --baseURL "https://${{ github.repository_owner }}.github.io/"
+        run: hugo --gc --minify --baseURL "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

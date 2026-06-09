@@ -106,9 +106,25 @@ main {
 }
 
 .post-list-item + .post-list-item {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+.post-list-item {
+  border: 1px solid color-mix(in srgb, var(--border) 88%, white 12%);
+  border-radius: 1.1rem;
+  background: color-mix(in srgb, white 70%, var(--page-bg) 30%);
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.post-list-item:hover {
+  border-color: color-mix(in srgb, var(--link) 22%, var(--border) 78%);
+  background: color-mix(in srgb, white 82%, var(--page-bg) 18%);
+}
+
+.post-card {
+  padding: 1.2rem 1.25rem 1.1rem;
 }
 
 .post-card-title {
@@ -164,7 +180,22 @@ main {
 }
 
 .category-terms-item + .category-terms-item {
-  margin-top: 0.9rem;
+  margin-top: 0.8rem;
+}
+
+.category-terms-item {
+  padding: 0.85rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--border) 82%, white 18%);
+  border-radius: 0.95rem;
+  background: color-mix(in srgb, white 55%, var(--page-bg) 45%);
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.category-terms-item:hover {
+  border-color: color-mix(in srgb, var(--link) 18%, var(--border) 82%);
+  background: color-mix(in srgb, white 68%, var(--page-bg) 32%);
 }
 
 .category-terms-count {
@@ -191,6 +222,18 @@ main {
   display: flex;
   gap: 0.9rem;
   margin: 0.7rem 0;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--border) 80%, white 20%);
+  border-radius: 0.9rem;
+  background: color-mix(in srgb, white 48%, var(--page-bg) 52%);
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.archive-year-item:hover {
+  border-color: color-mix(in srgb, var(--link) 16%, var(--border) 84%);
+  background: color-mix(in srgb, white 58%, var(--page-bg) 42%);
 }
 
 .archive-year-item time {
