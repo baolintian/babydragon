@@ -1,0 +1,37 @@
+baseURL = "https://<username>.github.io/"
+title = "Your Blog"
+locale = "zh-cn"
+defaultContentLanguage = "zh-cn"
+hasCJKLanguage = true
+enableRobotsTXT = true
+
+[params]
+author = "Your Name"
+description = "A minimalist blog."
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+[permalinks]
+posts = "/posts/:slugorcontentbasename/"
+
+[[menu.main]]
+name = "首页"
+pageRef = "/"
+weight = 1
+
+[[menu.main]]
+name = "归档"
+pageRef = "/archive"
+weight = 2
+
+[[menu.main]]
+name = "分类"
+pageRef = "/categories"
+weight = 3
+
+[[menu.main]]
+name = "关于"
+pageRef = "/about"
+weight = 4
