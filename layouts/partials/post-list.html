@@ -1,17 +1,24 @@
-{{- $pages := .pages | default site.RegularPages -}}
+{{- if not (isset . "pages") -}}
+  {{- errorf "partial %q requires a pages collection" "post-list.html" -}}
+{{- end -}}
+{{- $pages := .pages -}}
 {{- if gt (len $pages) 0 -}}
 <ol class="post-list" role="list">
   {{- range $pages.ByDate.Reverse -}}
-    {{- $primaryCategory := index (.Params.categories | default (slice)) 0 -}}
+    {{- $categories := .Params.categories | default (slice) -}}
+    {{- $primaryCategory := "" -}}
+    {{- if gt (len $categories) 0 -}}
+      {{- $primaryCategory = index $categories 0 -}}
+    {{- end -}}
     <li class="post-list-item">
       <article class="post-card">
         <header class="post-card-header">
-          <h2 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+          <h2 class="post-card-title">{{ .LinkTitle }}</h2>
           <p class="post-card-meta">
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
             {{- with $primaryCategory -}}
               <span class="post-card-separator" aria-hidden="true">·</span>
-              <a class="post-card-category" href="{{ "/categories/" | relURL }}{{ . | urlize }}/">{{ . }}</a>
+              <span class="post-card-category">{{ . }}</span>
             {{- end -}}
           </p>
         </header>
