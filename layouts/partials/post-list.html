@@ -13,7 +13,7 @@
     <li class="post-list-item">
       <article class="post-card">
         <header class="post-card-header">
-          <h2 class="post-card-title">{{ .LinkTitle }}</h2>
+          <h2 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
           <p class="post-card-meta">
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
             {{- with $primaryCategory -}}

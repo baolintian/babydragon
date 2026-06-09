@@ -119,6 +119,10 @@ main {
   line-height: 1.35;
 }
 
+.post-card-title a {
+  color: inherit;
+}
+
 .post-card-meta {
   display: flex;
   flex-wrap: wrap;
@@ -141,6 +145,90 @@ main {
   color: var(--muted);
 }
 
+.post-detail {
+  padding-top: 0.5rem;
+}
+
+.post-detail-header {
+  margin-bottom: 2.25rem;
+}
+
+.post-detail-title {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+.post-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.post-detail-content > :first-child {
+  margin-top: 0;
+}
+
+.post-detail-content > :last-child {
+  margin-bottom: 0;
+}
+
+.post-detail-content p,
+.post-detail-content ul,
+.post-detail-content ol,
+.post-detail-content blockquote,
+.post-detail-content pre {
+  margin: 1.15rem 0;
+}
+
+.post-detail-content h2,
+.post-detail-content h3,
+.post-detail-content h4 {
+  margin: 2.4rem 0 0.9rem;
+  line-height: 1.35;
+}
+
+.post-detail-content h2 {
+  font-size: 1.55rem;
+}
+
+.post-detail-content h3 {
+  font-size: 1.25rem;
+}
+
+.post-detail-content blockquote {
+  margin-left: 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--border);
+  color: var(--muted);
+}
+
+.post-detail-content code {
+  padding: 0.08rem 0.3rem;
+  background: rgba(62, 100, 133, 0.08);
+  border-radius: 0.2rem;
+  font-size: 0.92em;
+}
+
+.post-detail-content pre {
+  overflow-x: auto;
+  padding: 1rem 1.1rem;
+  background: rgba(38, 33, 27, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+}
+
+.post-detail-content pre code {
+  padding: 0;
+  background: none;
+}
+
 @media (max-width: 640px) {
   html {
     font-size: 17px;
@@ -148,5 +236,9 @@ main {
 
   .site-header {
     padding-top: 1.75rem;
+  }
+
+  .post-detail-title {
+    font-size: 1.9rem;
   }
 }

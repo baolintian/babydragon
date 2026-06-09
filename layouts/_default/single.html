@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{ $categories := .Params.categories | default (slice) }}
+<article class="post-detail">
+  <header class="post-detail-header">
+    <h1 class="post-detail-title">{{ .Title }}</h1>
+    <p class="post-detail-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+      {{ with $categories }}
+        <span class="post-detail-separator" aria-hidden="true">·</span>
+        <span class="post-detail-category">{{ delimit . " / " }}</span>
+      {{ end }}
+    </p>
+  </header>
+  <div class="post-detail-content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
