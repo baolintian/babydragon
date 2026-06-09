@@ -99,6 +99,71 @@ main {
   margin-bottom: 0;
 }
 
+.home-page {
+  padding-top: 0.5rem;
+}
+
+.home-intro {
+  margin-bottom: 2.25rem;
+}
+
+.home-intro h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.home-intro p {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-list-item + .post-list-item {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.post-card-title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.post-card-title a {
+  color: var(--text);
+}
+
+.post-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.post-card-category {
+  color: inherit;
+}
+
+.post-card-summary {
+  margin: 0.8rem 0 0;
+}
+
+.post-list-empty {
+  color: var(--muted);
+}
+
 @media (max-width: 640px) {
   html {
     font-size: 17px;
