@@ -3,9 +3,7 @@
     <a class="site-title" href="{{ "/" | relURL }}">{{ site.Title }}</a>
     <nav class="site-nav" aria-label="Main navigation">
       {{- range site.Menus.main }}
-      {{- $target := .URL | relURL }}
-      {{- $current := eq (strings.TrimSuffix "/" $.RelPermalink) (strings.TrimSuffix "/" $target) }}
-      <a href="{{ $target }}"{{ if $current }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      <a href="{{ .URL | relURL }}">{{ .Name }}</a>
       {{- end }}
     </nav>
   </div>
