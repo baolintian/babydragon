@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode | default site.Language.Lang | default "zh-cn" }}">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    <main class="page-shell">
+      {{ block "main" . }}{{ end }}
+    </main>
+  </body>
+</html>

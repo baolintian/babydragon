@@ -1,0 +1,123 @@
+:root {
+  --page-bg: #f7f3ea;
+  --surface: rgba(255, 255, 255, 0.72);
+  --text: #26211b;
+  --muted: #72685d;
+  --border: #d8cdbd;
+  --link: #3e6485;
+  --link-hover: #27445d;
+  --max-width: 46rem;
+  --header-width: 58rem;
+}
+
+html {
+  font-size: 18px;
+  background:
+    radial-gradient(circle at top, rgba(209, 190, 160, 0.18), transparent 38rem),
+    linear-gradient(180deg, #fbf8f2 0%, var(--page-bg) 100%);
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Songti SC", "Noto Serif CJK SC", serif;
+  line-height: 1.85;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.site-shell,
+.page-shell {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.site-shell {
+  max-width: var(--header-width);
+}
+
+.page-shell {
+  max-width: var(--max-width);
+  padding-bottom: 4rem;
+}
+
+.site-header {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.site-header::after {
+  content: "";
+  display: block;
+  max-width: var(--header-width);
+  margin: 1.25rem auto 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-title {
+  display: inline-block;
+  color: var(--text);
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-top: 0.9rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-nav a {
+  position: relative;
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+}
+
+.site-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.2rem;
+  border-bottom: 1px solid currentColor;
+}
+
+main {
+  display: block;
+}
+
+.page-shell > :first-child {
+  margin-top: 0;
+}
+
+.page-shell > :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 17px;
+  }
+
+  .site-header {
+    padding-top: 1.75rem;
+  }
+}
