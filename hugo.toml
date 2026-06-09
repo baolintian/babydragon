@@ -1,4 +1,4 @@
-baseURL = "https://<username>.github.io/"
+baseURL = "http://localhost/"
 title = "Your Blog"
 locale = "zh-cn"
 defaultContentLanguage = "zh-cn"
@@ -18,20 +18,20 @@ posts = "/posts/:slugorcontentbasename/"
 
 [[menu.main]]
 name = "首页"
-pageRef = "/"
+url = "/"
 weight = 1
 
 [[menu.main]]
 name = "归档"
-pageRef = "/archive"
+url = "/archive/"
 weight = 2
 
 [[menu.main]]
 name = "分类"
-pageRef = "/categories"
+url = "/categories/"
 weight = 3
 
 [[menu.main]]
 name = "关于"
-pageRef = "/about"
+url = "/about/"
 weight = 4
