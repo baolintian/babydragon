@@ -1,15 +1,18 @@
 {{ define "main" }}
 {{ $categories := .GetTerms "categories" }}
+{{ $showMeta := eq .Section "posts" }}
 <article class="post-detail">
   <header class="post-detail-header">
     <h1 class="post-detail-title">{{ .Title }}</h1>
-    <p class="post-detail-meta">
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-      {{ with $categories }}
-        <span class="post-detail-separator" aria-hidden="true">·</span>
-        <span class="post-detail-category">{{ range $index, $term := . }}{{ if gt $index 0 }} / {{ end }}{{ $term.LinkTitle }}{{ end }}</span>
-      {{ end }}
-    </p>
+    {{ if $showMeta }}
+      <p class="post-detail-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+        {{ with $categories }}
+          <span class="post-detail-separator" aria-hidden="true">·</span>
+          <span class="post-detail-category">{{ range $index, $term := . }}{{ if gt $index 0 }} / {{ end }}{{ $term.LinkTitle }}{{ end }}</span>
+        {{ end }}
+      </p>
+    {{ end }}
   </header>
   <div class="post-detail-content">
     {{ .Content }}
