@@ -87,19 +87,6 @@ a:focus-visible {
   position: relative;
 }
 
-.site-nav a[aria-current="page"] {
-  color: var(--text);
-}
-
-.site-nav a[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -0.2rem;
-  border-bottom: 1px solid currentColor;
-}
-
 main {
   display: block;
 }
