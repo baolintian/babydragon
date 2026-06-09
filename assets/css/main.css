@@ -172,6 +172,32 @@ main {
   color: var(--muted);
 }
 
+.archive-year + .archive-year {
+  margin-top: 2rem;
+}
+
+.archive-year-title {
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+}
+
+.archive-year-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.archive-year-item {
+  display: flex;
+  gap: 0.9rem;
+  margin: 0.7rem 0;
+}
+
+.archive-year-item time {
+  min-width: 3.2rem;
+  color: var(--muted);
+}
+
 .post-detail {
   padding-top: 0.5rem;
 }
