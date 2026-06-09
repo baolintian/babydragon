@@ -187,6 +187,32 @@ main {
   margin: 1.15rem 0;
 }
 
+.post-detail-content img,
+.post-detail-content svg,
+.post-detail-content video,
+.post-detail-content iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.25rem 0;
+}
+
+.post-detail-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+}
+
+.post-detail-content th,
+.post-detail-content td {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
 .post-detail-content h2,
 .post-detail-content h3,
 .post-detail-content h4 {

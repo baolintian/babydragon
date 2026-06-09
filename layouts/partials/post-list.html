@@ -5,10 +5,10 @@
 {{- if gt (len $pages) 0 -}}
 <ol class="post-list" role="list">
   {{- range $pages.ByDate.Reverse -}}
-    {{- $categories := .Params.categories | default (slice) -}}
+    {{- $terms := .GetTerms "categories" -}}
     {{- $primaryCategory := "" -}}
-    {{- if gt (len $categories) 0 -}}
-      {{- $primaryCategory = index $categories 0 -}}
+    {{- with $terms -}}
+      {{- $primaryCategory = (index . 0).LinkTitle -}}
     {{- end -}}
     <li class="post-list-item">
       <article class="post-card">
@@ -22,8 +22,9 @@
             {{- end -}}
           </p>
         </header>
-        {{- with .Description -}}
-          <p class="post-card-summary">{{ . }}</p>
+        {{- $summary := .Description | default .Summary -}}
+        {{- with $summary -}}
+          <p class="post-card-summary">{{ . | plainify }}</p>
         {{- end -}}
       </article>
     </li>
