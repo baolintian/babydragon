@@ -1,12 +1,4 @@
 {{ define "main" }}
 {{ $posts := where site.RegularPages "Section" "posts" }}
-<section class="home-page">
-  <header class="home-intro">
-    <h1>{{ site.Title }}</h1>
-    {{ with site.Params.description }}
-      <p>{{ . }}</p>
-    {{ end }}
-  </header>
-  {{ partial "post-list.html" (dict "pages" $posts) }}
-</section>
+{{ partial "post-list.html" (dict "pages" $posts) }}
 {{ end }}

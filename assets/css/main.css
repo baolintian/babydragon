@@ -99,26 +99,6 @@ main {
   margin-bottom: 0;
 }
 
-.home-page {
-  padding-top: 0.5rem;
-}
-
-.home-intro {
-  margin-bottom: 2.25rem;
-}
-
-.home-intro h1 {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.home-intro p {
-  margin: 0.75rem 0 0;
-  color: var(--muted);
-}
-
 .post-list {
   margin: 0;
   padding: 0;
