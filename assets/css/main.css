@@ -145,6 +145,33 @@ main {
   color: var(--muted);
 }
 
+.content-list-page,
+.category-terms-page {
+  padding-top: 0.5rem;
+}
+
+.content-list-title {
+  margin: 0 0 1.8rem;
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.category-terms-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.category-terms-item + .category-terms-item {
+  margin-top: 0.9rem;
+}
+
+.category-terms-count {
+  margin-left: 0.35rem;
+  color: var(--muted);
+}
+
 .post-detail {
   padding-top: 0.5rem;
 }

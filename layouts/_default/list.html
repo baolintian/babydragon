@@ -1,0 +1,6 @@
+{{ define "main" }}
+<section class="content-list-page">
+  <h1 class="content-list-title">{{ .Title }}</h1>
+  {{ partial "post-list.html" (dict "pages" .Pages) }}
+</section>
+{{ end }}

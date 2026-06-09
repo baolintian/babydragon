@@ -7,8 +7,10 @@
   {{- range $pages.ByDate.Reverse -}}
     {{- $terms := .GetTerms "categories" -}}
     {{- $primaryCategory := "" -}}
+    {{- $primaryCategoryLink := "" -}}
     {{- with $terms -}}
       {{- $primaryCategory = (index . 0).LinkTitle -}}
+      {{- $primaryCategoryLink = (index . 0).RelPermalink -}}
     {{- end -}}
     <li class="post-list-item">
       <article class="post-card">
@@ -18,7 +20,11 @@
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
             {{- with $primaryCategory -}}
               <span class="post-card-separator" aria-hidden="true">·</span>
-              <span class="post-card-category">{{ . }}</span>
+              {{- if $primaryCategoryLink -}}
+                <a class="post-card-category" href="{{ $primaryCategoryLink }}">{{ . }}</a>
+              {{- else -}}
+                <span class="post-card-category">{{ . }}</span>
+              {{- end -}}
             {{- end -}}
           </p>
         </header>

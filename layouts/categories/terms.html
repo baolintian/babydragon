@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="category-terms-page">
+  <h1 class="content-list-title">分类</h1>
+  {{ if gt (len .Data.Terms) 0 }}
+    <ul class="category-terms-list">
+      {{ range .Data.Terms.Alphabetical }}
+        <li class="category-terms-item">
+          <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
+          <span class="category-terms-count">({{ .Count }})</span>
+        </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p class="post-list-empty">暂无分类。</p>
+  {{ end }}
+</section>
+{{ end }}
