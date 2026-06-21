@@ -4,6 +4,7 @@ locale = "zh-cn"
 defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
 enableRobotsTXT = true
+buildFuture = true
 disableKinds = ["RSS"]
 
 [outputs]
